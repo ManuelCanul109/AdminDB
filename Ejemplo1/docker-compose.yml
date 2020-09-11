@@ -7,3 +7,5 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - "./config:/etc/mysql/conf.d" #TODO LO QUE ESTA DESPUES DE : LO MANDAS A LA RUTA QUE ESTA ANTES DE :
