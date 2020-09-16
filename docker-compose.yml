@@ -4,8 +4,13 @@ services:
   basededatos:
     image: mariadb
     ports:
-      - "3306:3306"
+      - "3806:3306" #Puertos publicos : Puertos Privados
     environment:
       - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=myfirstdb
+      - MYSQL_USER=myfirstuser
+      - MYSQL_PASSWORD=myfirstpassword
     volumes:
       - "./config:/etc/mysql/conf.d" #TODO LO QUE ESTA DESPUES DE : LO MANDAS A LA RUTA QUE ESTA ANTES DE :
+      - "./files:/var/lib/mysql"
+      - "./log:/var/log/mysql"
