@@ -1,0 +1,3 @@
+docker exec -i admindb_basededatos_1 mysqldump -u root --password=123456 --help --default-character-set=utf8 --routines --skip-triggers --add-drop-table=false myfirstdb | gzip > repaldo1.sql.gz
+
+docker exec -i admindb_basededatos_1 "C:/xampp/mysql/bin/mysqldump.exe" --backup --target-dir=dbbackups --user=root --password=123456
