@@ -1,0 +1,45 @@
+## NOS CONECTAMOS POR SSH
+
+ssh -i "C:\Users\Manuel\.ssh\LLAVE.pem" ubuntu@3.12.73.101
+
+## PARA REMOVER TODO DE DOCKER POR SI ACASO
+
+apt-get remove docker docker-engine docker.io containerd runc
+
+## HAY QUE ACTUALIZAR LOS PAQUETES
+
+sudo apt-get update
+
+## INSTALAMOS LOS NUEVOS PAQUETES
+
+sudo apt-get install apt-transport-https
+sudo apt-get install ca-certificates
+sudo apt-get install curl
+sudo apt-get install gnupg-agent
+sudo apt-get install software-properties-common
+
+## AGREGAMOS DOCKER AL gnupg
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+## VERIFICAMOS QUE TENGAMOS UNA LLAVE DE ACCESO
+
+sudo apt-key fingerprint 0EBFCD88
+
+## ESTABLECEMOS UN REPOSITORIO ESTABLECEMOS
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+## HAY QUE ACTUALIZAR LOS PAQUETES
+
+sudo apt-get update
+
+## INSTALAMOS DOCKER engine
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+## INSTALAMOS PARA EJECUTAR COMANDOS DE DOCKER
+
+apt install docker-compose
+
+
